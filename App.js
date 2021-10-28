@@ -20,6 +20,25 @@ export default function App() {
     })();
   }, []);
 
+  const takePicture = async () => {
+    if(camera){
+      const data = await camera.takePictureAsync(null);
+       setImage(data.uri);
+       
+    }
+  }
+  
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [1, 1],
+});
+
+console.log(result);
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
