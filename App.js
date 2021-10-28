@@ -85,8 +85,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignContent: 'space-around'
   },
+
+  camera: {
+    flex: 1,
+    aspectRatio: 1,
+  },
+   cameraContainer: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    flexDirection: 'row'
+   
+  },
+
 });
