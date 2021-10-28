@@ -4,13 +4,11 @@ import { Camera } from 'expo-camera';
 import * as ImagePicker from 'expo-image-picker';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [hasCameraPermission, setHasCameraPermission] = useState(null);
+  const [hasGalleryPermission, setHasGalleryPermission] = useState(null);
+  const [camera, setCamera] = useState(null);
+  const [image, setImage] = useState(null);
+  const [type, setType] = useState(Camera.Constants.Type.back);
 
 const styles = StyleSheet.create({
   container: {
