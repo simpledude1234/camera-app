@@ -36,7 +36,18 @@ export default function App() {
 });
 
 console.log(result);
+if (!result.cancelled) {
+  setImage(result.uri);
+}
+};
 
+
+  if (hasCameraPermission === null || hasGalleryPermission === false) {
+    return <View />;
+  }
+  if (hasCameraPermission === false || hasGalleryPermission === false) {
+    return <Text>No access to camera</Text>;
+  }
 
 
 const styles = StyleSheet.create({
