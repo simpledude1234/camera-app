@@ -49,6 +49,18 @@ if (!result.cancelled) {
     return <Text>No access to camera</Text>;
   }
 
+  return (
+    <View style={styles.container}>
+      <View style={styles.cameraContainer}>
+  
+      <Camera 
+          ref={ref => setCamera(ref)} 
+          style={styles.camera} 
+          type={type} 
+          ratio={'1:1'} 
+        />
+        </View>
+
 
 const styles = StyleSheet.create({
   container: {
