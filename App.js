@@ -35,12 +35,12 @@ export default function App() {
       aspect: [1, 1],
 });
 
-console.log(result);
-if (!result.cancelled) {
-  setImage(result.uri);
+    console.log(result);
+
+    if (!result.cancelled) {
+    setImage(result.uri);
 }
 };
-
 
   if (hasCameraPermission === null || hasGalleryPermission === false) {
     return <View />;
@@ -59,6 +59,7 @@ if (!result.cancelled) {
           type={type} 
           ratio={'1:1'} 
         />
+        </View>
         </View>
 
 
