@@ -10,6 +10,16 @@ export default function App() {
   const [image, setImage] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
 
+  useEffect(() => {
+    (async () => {
+      const cameraStatus  = await Camera.requestCameraPermissionsAsync();
+      setHasCameraPermission(cameraStatus.status === 'granted');
+      const  galleryStatus  = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      setHasGalleryPermission(galleryStatus.status === 'granted')
+
+    })();
+  }, []);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
